@@ -1,0 +1,4 @@
+infrastructure/.terraform
+.vscode
+.DS_Store
+infrastructure/
