@@ -1,5 +1,6 @@
 body {
-    font-family: 'Inter', sans-serif;
+    /* Updated font stack per design instructions: avoid generic system fonts; use Space Grotesk */
+    font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
     background-color: #0D1117;
     color: #C9D1D9;
     overflow-x: hidden; /* allow vertical scrolling while preventing horizontal overflow */
@@ -52,7 +53,8 @@ main, header, footer {
     padding-right: 0.15em;
 }
 .hero-heading {
-    font-weight: 800;
+    font-weight: 800; /* extreme weight for strong display */
+    font-family: 'Space Grotesk', sans-serif;
     line-height: 1.05;
     letter-spacing: -0.025em;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
@@ -69,7 +71,8 @@ main, header, footer {
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: #8B949E;
-    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace; /* thin monospace for contrast */
+    font-weight: 100;
     line-height: 1;
     margin: 0; /* remove bottom margin to avoid misalignment */
 }
@@ -92,7 +95,8 @@ main, header, footer {
 }
 .hero-primary {
     display: block;
-    font-weight: 800;
+    font-weight: 800; /* maintain extreme bold for primary name */
+    font-family: 'Space Grotesk', sans-serif;
     text-shadow: 0 2px 12px rgba(88, 166, 255, 0.25), 0 0 0 1px rgba(255,255,255,0.02);
     transition: text-shadow 0.4s ease, filter 0.4s ease;
 }
@@ -104,7 +108,8 @@ main, header, footer {
     display: block;
     margin-top: 0.75rem;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
-    font-weight: 500;
+    font-weight: 300; /* lighter weight for contrast against bold hero-primary */
+    font-family: 'Space Grotesk', sans-serif;
     color: #C9D1D9;
 }
 .coming-soon-badge {
@@ -112,7 +117,8 @@ main, header, footer {
     align-items: center;
     gap: 6px;
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 800; /* strong contrast vs thin hero-preamble */
+    font-family: 'JetBrains Mono', monospace;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     background: rgba(88, 166, 255, 0.12);
@@ -172,13 +178,24 @@ main, header, footer {
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.02em;
-    background-image: linear-gradient(#161B22,#161B22), linear-gradient(90deg,#F778BA,#A093FF,#58A6FF);
+    /* Default gradient will be overridden by variant classes */
+    background-image: linear-gradient(#161B22,#161B22), linear-gradient(90deg,#ff5e84,#3e8bff);
     background-origin: border-box;
     background-clip: padding-box,border-box;
     border: 1px solid transparent;
     box-shadow: 0 4px 14px rgba(0,0,0,0.45);
     white-space: normal;
     line-height: 1.25;
+}
+/* Variant tooltip borders using specific palette gradients */
+.tooltip-scale {
+    background-image: linear-gradient(#161B22,#161B22), linear-gradient(90deg,#ff5e84,#3e8bff);
+}
+.tooltip-simplify {
+    background-image: linear-gradient(#161B22,#161B22), linear-gradient(90deg,#ff5e84,#59f4b2);
+}
+.tooltip-enable {
+    background-image: linear-gradient(#161B22,#161B22), linear-gradient(90deg,#ff5e84,#ff8e26);
 }
 /* Removed icon classes after reverting to text-only tooltips */
 .tooltip::after {

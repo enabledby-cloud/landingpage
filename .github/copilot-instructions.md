@@ -13,8 +13,34 @@ This is a static landing page for Marvyn Zalewski's presence (enabledby.cloud), 
 
 ### Visual Theme
 - **Color scheme**: Dark GitHub-like theme (background #0D1117, text #C9D1D9)
-- **Gradients**: Three-color gradient (#F778BA → #A093FF → #58A6FF) used consistently for branding
-- **Typography**: Inter font family with various weights, extensive use of Tailwind utility classes
+- **Gradients**: 
+  - primary gradient: #ff5e84 to #3e8bff
+  - secondary gradient: #ff5e84 to #59f4b2
+  - tertiary gradient: #ff5e84 to #ff8e26
+
+- **Typography**: 
+<use_interesting_fonts>
+Typography instantly signals quality. Avoid using boring, generic fonts.
+
+Never use: Inter, Roboto, Open Sans, Lato, default system fonts
+
+Here are some examples of good, impactful choices:
+- Code aesthetic: JetBrains Mono, Fira Code, Space Grotesk
+- Editorial: Playfair Display, Crimson Pro
+- Technical: IBM Plex family, Source Sans 3
+- Distinctive: Bricolage Grotesque, Newsreader
+
+Pairing principle: High contrast = interesting. Display + monospace, serif + geometric sans, variable font across weights.
+
+Use extremes: 100/200 weight vs 800/900, not 400 vs 600. Size jumps of 3x+, not 1.5x.
+
+Pick one distinctive font, use it decisively. apply tailwind classes for weight/size.
+</use_interesting_fonts>
+
+- **symbols/icons**:
+  - scale: uses the primary color gradient and represents a triangle scale icon without filling
+  - simplify: uses the secondary color gradient and represents a circle icon without filling 
+  - enable: uses the tertiary color gradient and represents a hexagon icon without filling
 
 ### Interactive Elements
 - **Particle system**: Canvas animation with mouse proximity effects (150px radius increases line opacity)
@@ -77,7 +103,7 @@ const numberOfParticles = (canvas.height * canvas.width) / 15000; // Density cal
 
 ## Critical Dependencies
 - **Tailwind CSS**: `@tailwindcss/browser@4` via CDN - no local build required
-- **Google Fonts**: Inter font family preloaded for performance
+- **Google Fonts**: load fonts from Google Fonts CDN
 - **Canvas API**: Core requirement for particle animation, no fallback implemented
 
 ## Common Tasks
