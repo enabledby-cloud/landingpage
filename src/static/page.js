@@ -39,13 +39,20 @@ class Particle {
 function init() {
     particles = [];
     let numberOfParticles = (canvas.height * canvas.width) / 15000;
+    // Palette derived from gradient stops (slightly transparent)
+    const palette = [
+        'rgba(255,94,132,0.35)', // #ff5e84
+        'rgba(62,139,255,0.30)', // #3e8bff
+        'rgba(89,244,178,0.30)', // #59f4b2
+        'rgba(255,142,38,0.32)'  // #ff8e26
+    ];
     for (let i = 0; i < numberOfParticles; i++) {
         let size = (Math.random() * 2) + 1;
         let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
         let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
         let directionX = (Math.random() * .4) - .2;
         let directionY = (Math.random() * .4) - .2;
-        let color = 'rgba(160, 147, 255, 0.3)';
+        let color = palette[Math.floor(Math.random() * palette.length)];
         particles.push(new Particle(x, y, directionX, directionY, size, color));
     }
 }
@@ -64,7 +71,10 @@ function connect() {
                 if (mouseDistance < 150) {
                     opacityValue = 1 - (mouseDistance/150);
                 }
-                ctx.strokeStyle = `rgba(88, 166, 255, ${opacityValue})`;
+                // Slightly vary connection stroke hue by sampling a palette index
+                const strokePalette = ['88,166,255', '255,94,132', '255,142,38'];
+                const pick = strokePalette[(a + b) % strokePalette.length];
+                ctx.strokeStyle = `rgba(${pick}, ${Math.max(0, Math.min(opacityValue, 1))})`;
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particles[a].x, particles[a].y);

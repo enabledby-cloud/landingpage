@@ -1,8 +1,21 @@
+/* Root design tokens per updated instructions */
+:root {
+    --color-bg: #0D1117;
+    --color-text: #C9D1D9;
+    --color-muted: #8B949E;
+    --gradient-primary: linear-gradient(90deg,#ff5e84,#3e8bff);
+    --gradient-secondary: linear-gradient(90deg,#ff5e84,#59f4b2);
+    --gradient-tertiary: linear-gradient(90deg,#ff5e84,#ff8e26);
+    --gradient-full: linear-gradient(90deg,#ff5e84,#3e8bff,#59f4b2,#ff8e26,#ff5e84);
+    --font-display: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
 body {
-    /* Updated font stack per design instructions: avoid generic system fonts; use Space Grotesk */
-    font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
-    background-color: #0D1117;
-    color: #C9D1D9;
+    /* Updated font stack per design instructions: use distinctive display font */
+    font-family: var(--font-display);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     overflow-x: hidden; /* allow vertical scrolling while preventing horizontal overflow */
 }
 #particle-canvas {
@@ -29,7 +42,7 @@ main, header, footer {
     z-index: 1;
 }
 .gradient-text {
-    background: linear-gradient(90deg, #F778BA, #A093FF, #58A6FF);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -43,7 +56,7 @@ main, header, footer {
     100% { background-position: 0% 50%; }
 }
 .gradient-text-animate {
-    background: linear-gradient(90deg, #F778BA, #A093FF, #58A6FF, #F778BA);
+    background: var(--gradient-full);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -54,10 +67,10 @@ main, header, footer {
 }
 .hero-heading {
     font-weight: 800; /* extreme weight for strong display */
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-display);
     line-height: 1.05;
-    letter-spacing: -0.025em;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: -0.03em;
+    font-size: clamp(2.6rem, 6.2vw, 4.75rem);
     text-align: center;
     color: #FFFFFF;
     opacity: 0;
@@ -67,11 +80,11 @@ main, header, footer {
 .hero-preamble {
     display: inline-flex;
     align-items: center;
-    font-size: 0.75rem;
-    letter-spacing: 0.35em;
+    font-size: 0.72rem;
+    letter-spacing: 0.38em;
     text-transform: uppercase;
-    color: #8B949E;
-    font-family: 'JetBrains Mono', monospace; /* thin monospace for contrast */
+    color: var(--color-muted);
+    font-family: var(--font-mono); /* thin monospace for contrast */
     font-weight: 100;
     line-height: 1;
     margin: 0; /* remove bottom margin to avoid misalignment */
@@ -96,7 +109,7 @@ main, header, footer {
 .hero-primary {
     display: block;
     font-weight: 800; /* maintain extreme bold for primary name */
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-display);
     text-shadow: 0 2px 12px rgba(88, 166, 255, 0.25), 0 0 0 1px rgba(255,255,255,0.02);
     transition: text-shadow 0.4s ease, filter 0.4s ease;
 }
@@ -109,17 +122,17 @@ main, header, footer {
     margin-top: 0.75rem;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 300; /* lighter weight for contrast against bold hero-primary */
-    font-family: 'Space Grotesk', sans-serif;
-    color: #C9D1D9;
+    font-family: var(--font-display);
+    color: var(--color-text);
 }
 .coming-soon-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 800; /* strong contrast vs thin hero-preamble */
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.15em;
+    font-family: var(--font-mono);
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     background: rgba(88, 166, 255, 0.12);
     color: #58A6FF;
@@ -162,41 +175,34 @@ main, header, footer {
 .tooltip {
     visibility: hidden;
     background-color: #161B22;
-    color: #C9D1D9;
+    color: var(--color-text);
     display: block;
-    border-radius: 6px;
-    padding: 8px 12px;
+    border-radius: 8px;
+    padding: 10px 14px;
     position: absolute;
     z-index: 10;
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: opacity 0.25s;
+    transition: opacity 0.25s, transform 0.25s;
     width: max-content;
     max-width: 260px;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.02em;
-    /* Default gradient will be overridden by variant classes */
-    background-image: linear-gradient(#161B22,#161B22), linear-gradient(90deg,#ff5e84,#3e8bff);
+    background-image: linear-gradient(#161B22,#161B22), var(--gradient-primary);
     background-origin: border-box;
     background-clip: padding-box,border-box;
     border: 1px solid transparent;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.55);
     white-space: normal;
     line-height: 1.25;
 }
 /* Variant tooltip borders using specific palette gradients */
-.tooltip-scale {
-    background-image: linear-gradient(#161B22,#161B22), linear-gradient(90deg,#ff5e84,#3e8bff);
-}
-.tooltip-simplify {
-    background-image: linear-gradient(#161B22,#161B22), linear-gradient(90deg,#ff5e84,#59f4b2);
-}
-.tooltip-enable {
-    background-image: linear-gradient(#161B22,#161B22), linear-gradient(90deg,#ff5e84,#ff8e26);
-}
+.tooltip-scale { background-image: linear-gradient(#161B22,#161B22), var(--gradient-primary); }
+.tooltip-simplify { background-image: linear-gradient(#161B22,#161B22), var(--gradient-secondary); }
+.tooltip-enable { background-image: linear-gradient(#161B22,#161B22), var(--gradient-tertiary); }
 /* Removed icon classes after reverting to text-only tooltips */
 .tooltip::after {
     content: "";
@@ -211,6 +217,7 @@ main, header, footer {
 .tooltip-container:hover .tooltip {
     visibility: visible;
     opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
 }
 .tooltip-container:focus .tooltip,
 .tooltip-container:focus-within .tooltip {
@@ -244,7 +251,7 @@ main, header, footer {
 .footer-gradient-bar {
     height: 2px;
     width: 100%;
-    background: linear-gradient(90deg, #F778BA, #A093FF, #58A6FF);
+    background: var(--gradient-primary);
     opacity: 0.6;
     margin-bottom: 20px;
     border-radius: 2px;
