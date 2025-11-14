@@ -73,9 +73,8 @@ main, header, footer {
     font-size: clamp(2.6rem, 6.2vw, 4.75rem);
     text-align: center;
     color: #FFFFFF;
-    opacity: 0;
-    transform: translateY(18px);
-    animation: heroFade 0.9s ease-out forwards;
+    opacity: 1;
+    transform: none;
 }
 .hero-preamble {
     display: inline-flex;
@@ -148,10 +147,7 @@ main, header, footer {
     .gradient-text-animate { animation: none; background-size: auto; }
     .hero-heading { animation: none; opacity: 1; transform: none; }
 }
-@keyframes heroFade {
-    0% { opacity: 0; transform: translateY(18px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
+
 @media (max-width: 420px) {
     .hero-secondary { display: none; }
     .hero-preamble { letter-spacing: 0.25em; }
