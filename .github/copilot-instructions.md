@@ -3,6 +3,12 @@
 ## Project Overview
 This is a static landing page for Marvyn Zalewski's presence (enabledby.cloud), deployed via GitHub Pages. The site features an animated particle system background with interactive tooltips and a "coming soon" message with contact links.
 
+## Restrictions
+- No backend or server-side code; purely static HTML, CSS, and JavaScript
+- No external dependencies beyond CDN-hosted libraries (Tailwind CSS, Google Fonts)
+- Minimal use of JavaScript; focus on CSS for styling and animations
+- Do not keep a changelog in any files
+
 ## Architecture & File Structure
 - **`src/index.html`**: Single-page application using Tailwind CSS (via CDN) and Inter font
 - **`src/static/styles.css`**: Custom CSS for particle effects, gradient text, tooltips, and dark theme

@@ -71,7 +71,6 @@ function connect() {
                 if (mouseDistance < 150) {
                     opacityValue = 1 - (mouseDistance/150);
                 }
-                // Slightly vary connection stroke hue by sampling a palette index
                 const strokePalette = ['88,166,255', '255,94,132', '255,142,38'];
                 const pick = strokePalette[(a + b) % strokePalette.length];
                 ctx.strokeStyle = `rgba(${pick}, ${Math.max(0, Math.min(opacityValue, 1))})`;

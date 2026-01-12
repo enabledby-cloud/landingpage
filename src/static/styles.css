@@ -1,4 +1,3 @@
-/* Root design tokens per updated instructions */
 :root {
     --color-bg: #0D1117;
     --color-text: #C9D1D9;
@@ -12,7 +11,6 @@
 }
 
 body {
-    /* Updated font stack per design instructions: use distinctive display font */
     font-family: var(--font-display);
     background-color: var(--color-bg);
     color: var(--color-text);
