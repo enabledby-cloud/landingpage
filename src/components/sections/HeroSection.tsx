@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { heroData } from '@/data';
 import { GradientText, Heading, Text, StarBorder, Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, TypingText, type TypingSegment } from '@/components/ui';
 import { ArrowDown } from 'lucide-react';

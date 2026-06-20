@@ -5,25 +5,25 @@ export const experienceData: ExperienceData = {
  awin: {
    title: 'Engineering Manager, Cloud Platform',
    company: 'Awin Global',
-   period: 'Jul 2024 - Present',
+   period: 'Aug 2024 - Present',
    description:
-     'Leading a high-performing, cross-cultural cloud platform and DevOps team focused on simplifying infrastructure, improving developer experience, and driving a cost-conscious and operationally excellent engineering culture. I define the platform strategy, manage the roadmap with OKRs, and act as a force multiplier for my team.',
+     'Leading a cross-cultural Cloud Platform team, responsible for platform strategy, DevOps transformation, and FinOps ownership. My mission is to create a resilient, cost-effective, and enabling platform that accelerates the entire engineering organization.',
    achievements: [
-     'Spearheaded a FinOps transformation that exceeded its goal, delivering over $1M in annualized savings and establishing a crucial partnership with the finance department.',
-     'Authored and executed a comprehensive Service Reliability Engineering (SRE) strategy, delivering an auditable incident management framework and a clear roadmap for improving service reliability.',
-     'Led the migration to AWS Identity Center, eliminating manual access management, resolving auth issues, and significantly improving the company’s security posture.',
-     'Owned the modernization of a legacy CI/CD system into a cloud-native solution, reducing service onboarding time by over 85% (from 8+ hours to <1 hour) and improving stability for 200+ engineers.'
+     'Established the FinOps function from scratch, building a culture of cost accountability and achieving over $84,000 in monthly savings within 6 months.',
+     'Drove the observability strategy, standardizing on OTEL and Vector to simplify usability and reduce costs across 15+ engineering teams.',
+     'Systematically improved team health and developer experience, raising the Peakon engagement score from 7.2 to 8.3 and the DX score from 62 to 73 within one year.',
+     'Grew the team by hiring and onboarding 3 DevOps engineers (mid to Senior 2) across Spain and Romania to scale our Cloud Platform capabilities.',
    ],
    skills: ['Engineering Management', 'AWS', 'FinOps', 'SRE Strategy', 'Team Topologies', 'Roadmapping'],
    previousRole: {
      title: 'Cloud DevOps Manager',
-     period: 'Jan 2024 - Jul 2024',
+     period: 'Jan 2024 - Aug 2024',
      description:
-       'Inherited and restructured a team with conflicting ownership, transforming it into a cohesive Cloud Platform team. Over 7 months, I resolved critical operational bottlenecks, defined a clear mission based on Team Topologies, and established the charter and roadmap that laid the foundation for the future platform organization.',
+       'Restructured the team and its operating model to remove systemic bottlenecks and clarify ownership using Team Topologies.',
      achievements: [
-       'Resolved a critical platform ownership conflict by applying Team Topologies principles, which eliminated ticket ping-pong and contributed to an 11-point increase in the developer experience score.',
-       'Hired a key senior engineer and empowered them to lead the FinOps transformation, demonstrating the multiplier effect of investing in high-caliber talent.',
-       'Authored the new team charter and roadmap that led directly to the creation of the permanent Cloud Platform team and the hiring of two additional managers.',
+       'Analyzed operational bottlenecks, defined a new department charter, and led a re-organization into distinct DevOps, Cloud Platform, and IT Ops teams.',
+       'Coached 3 senior DevOps engineers across Germany and Italy to successfully conclude the AWS landing zone for organizational adoption.',
+       'Replaced Docker Desktop with open-source tools, improving the developer experience and achieving $18,000 in annual savings.',
      ],
    },
  },
@@ -37,25 +37,26 @@ export const experienceData: ExperienceData = {
    skills: ['Cloud Security Architecture', 'SPLC Design', 'AWS Security Hub', 'Threat Modeling', 'NIST/ISO'],
    roles: [
      {
-       title: 'Security Officer',
-       period: 'Mar 2023 - Jan 2024',
+       title: 'Security Architect',
+       period: 'Jul 2022 - Jan 2024',
        description:
-         'Pioneered and scaled the group-wide Secure Product Lifecycle (SPLC). I acted as the central security authority, managing security integration and driving a data-driven risk reduction strategy.',
+         'Built and scaled a self-service Secure Product Lifecycle (SPLC) for AVIV\'s cloud-native products.',
        achievements: [
-         'Established and scaled the SPLC to support over 50 application security assessments in just 9 months, uncovering 80+ unique risks.',
-         'Implemented a group-wide, data-driven strategy to prioritize and remediate risks, focusing on platform-level fixes over temporary solutions.',
-         'Provided critical guidance, threat models, and design reviews to engineering teams across the entire organization.',
+         'Launched the SPLC and matured it into a self-service program (dynamic questionnaire and standardized risk reports) covering 50+ assessments in 9 months, uncovering 80+ unique risks.',
+         'Reduced recurring findings by prioritizing platform-level fixes with preventative SCPs, automated responses, and notifications.',
+         'Established KPIs (cycle time, completion rates, developer satisfaction) and used them to drive iterative improvements and leadership reporting.',
+         'Raised security awareness across Product & Tech through presentations, architecture guidelines, and a newsletter embedded in team rituals.',
        ],
      },
      {
-       title: 'Security Architect',
-       period: 'Feb 2022 - Feb 2023',
+       title: 'Security Officer',
+       period: 'Feb 2022 - Jun 2022',
        description:
-         'Architected and built a greenfield, multi-account AWS security foundation to support new whitelabel products. My role was to create a secure, scalable, and resilient cloud environment from first principles.',
+         'Delivered merger integration and AWS security foundations that improved control coverage and audit readiness.',
        achievements: [
-         'Designed and deployed a robust, multi-account AWS security foundation, establishing a secure baseline for all future product development.',
-         'Hardened the cloud environment by implementing preventative guardrails (SCPs), a strict RBAC model, and detective scanning capabilities.',
-         'Engineered and centralized the security monitoring and alerting strategy using AWS Security Hub and custom tooling.',
+         'Ran the security integration stream for the German businesses, aligned controls to CIS and group standards, and facilitated internal audits.',
+         'Developed the security stream for the AWS landing zone covering IAM Identity Center, Transit Gateway hub-and-spoke network, and centralized security logging.',
+         'Fortified the AWS security posture via SCPs, Prowler, and AWS Security Hub.',
        ],
      },
    ],
@@ -83,11 +84,12 @@ export const experienceData: ExperienceData = {
        title: 'DevOps Engineer',
        period: 'Aug 2015 - Sep 2021',
        description:
-         'Championed a "You build it, you run it" culture and played a key, cross-functional role in rebuilding the company\'s flagship product on AWS.',
+         'Pioneered a modern DevOps culture and rebuilt the main product with an AWS-native architecture.',
        achievements: [
-         'Led a CI/CD modernization effort that reduced service onboarding time from over 8 hours to less than 1 hour and eliminated manual deployment interventions.',
-         'Drove the modernization of configuration management, migrating a monolithic Puppet setup to a highly modular Ansible infrastructure.',
-         'Contributed across all phases of development (backend, frontend, infrastructure), using Java, Python, TypeScript, Angular, and React.',
+         'Modernized legacy config management by replacing Puppet with modular Ansible and introducing a Docker platform based on DC/OS Mesosphere.',
+         'Managed and automated 3 datacenters with 50+ Linux and Windows physical servers (KVM, OpenNebula, Hyper-V).',
+         'Engineered GitLab CI/CD with Terraform (later CDKTF), including ephemeral stacks to accelerate testing and releases.',
+         'Shipped the AWS-native MVP in 8 months and completed the feature set 9 months later.',
        ],
      },
    ],
@@ -97,14 +99,14 @@ export const experienceData: ExperienceData = {
    company: 'Goodgame Studios / tectumHOME',
    period: 'Sep 2011 - Jul 2015',
    description:
-     'Developed foundational skills in IT systems, networking, and project execution. Provided 1st, 2nd, and 3rd level technical support in a fast-paced environment and contributed to projects focused on Linux and live event technology.',
+     'Provided 2nd and 3rd level IT support for 800+ users in a fast-growing gaming company while managing Windows Server infrastructure and completing an apprenticeship in IT Systems Electronics.',
    achievements: [
-     'Planned and executed smart home projects, including hardware installation and programming of Crestron control units.',
-     'Administered clients and applications, created technical documentation, and enabled company-wide software deployments.',
+     'Managed Windows Server environments, Active Directory, and Google Workspace administration.',
+     'Automated routine tasks using PowerShell and AutoIT scripts to improve operational efficiency.',
+     'Planned and executed smart home projects including Crestron control unit programming.',
    ],
-   skills: ['Linux', 'Networking', 'IT Support', 'Crestron'],
+   skills: ['Windows Server', 'Active Directory', 'PowerShell', 'Networking', 'Crestron'],
  },
-
 };
 
 export const skillsData: SkillsData = {
@@ -115,9 +117,9 @@ export const skillsData: SkillsData = {
      skills: [
        'People-Centric Leadership',
        'Engineering Management',
+       'Systemic Thinking',
        'Team Building & Coaching',
-       'OKRs & Roadmapping',
-       'Agile/Scrumban',
+       'Organizational Design',
        'Stakeholder Management',
      ],
    },
@@ -127,7 +129,7 @@ export const skillsData: SkillsData = {
        'Developer Experience (DevEx)',
        'Cloud Cost Management (FinOps)',
        'Service Reliability (SRE)',
-       'Observability (Datadog)',
+       'Observability (Datadog, OTEL, Vector)',
        'Internal Developer Platforms',
        'Team Topologies',
      ],
@@ -139,7 +141,7 @@ export const skillsData: SkillsData = {
        'Terraform/CDKTF',
        'Kubernetes & Docker',
        'CI/CD (GitLab, GitHub Actions)',
-       'Infrastructure as Code (IaC)',
+       'CloudFormation',
        'Ansible',
      ],
    },
@@ -155,5 +157,4 @@ export const skillsData: SkillsData = {
      ],
    },
  ],
-
 };

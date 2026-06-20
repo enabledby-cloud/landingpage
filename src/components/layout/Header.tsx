@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
@@ -22,7 +21,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <a 

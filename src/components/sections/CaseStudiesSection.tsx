@@ -13,14 +13,13 @@ export function CaseStudiesSection() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [progress, setProgress] = useState(0);
-  const startRef = useRef(Date.now());
+  const startRef = useRef(0);
   const rafRef = useRef<number>(0);
   const cardsRef = useRef<HTMLDivElement>(null);
 
-  // Reset progress + scroll active card into view (container only, no page scroll)
+  // Scroll active card into view + reset timer
   useEffect(() => {
     startRef.current = Date.now();
-    setProgress(0);
     const container = cardsRef.current;
     if (!container) return;
     const card = container.children[active] as HTMLElement | undefined;
@@ -53,10 +52,9 @@ export function CaseStudiesSection() {
     return () => cancelAnimationFrame(rafRef.current);
   }, [active, paused, count]);
 
-  // When paused, remember elapsed so we can resume
+  // When unpausing, adjust start time so progress resumes from where it was
   useEffect(() => {
     if (paused) return;
-    // Adjust start time so progress resumes from where it was
     const elapsed = (progress / 100) * AUTO_ADVANCE_MS;
     startRef.current = Date.now() - elapsed;
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -134,16 +132,31 @@ export function CaseStudiesSection() {
           </div>
 
           {/* Result strip */}
-          <div className="border-t border-border bg-background/60 px-4 sm:px-6 lg:px-10 py-4 sm:py-5
-                          flex items-center gap-3">
-            <span
-              className="shrink-0 h-8 w-1 rounded-full"
-              style={{ background: 'linear-gradient(180deg, #F778BA, #A093FF, #58A6FF)' }}
-              aria-hidden
-            />
-            <p className="text-base md:text-lg font-bold tracking-tight">
-              <GradientText>{study.result}</GradientText>
-            </p>
+          <div className="border-t border-border bg-background/60 px-4 sm:px-6 lg:px-10 py-4 sm:py-5">
+            <div className="flex items-center gap-3">
+              <span
+                className="shrink-0 h-8 w-1 rounded-full"
+                style={{ background: 'linear-gradient(180deg, #F778BA, #A093FF, #58A6FF)' }}
+                aria-hidden
+              />
+              <p className="text-base md:text-lg font-bold tracking-tight">
+                <GradientText>{study.result}</GradientText>
+              </p>
+            </div>
+
+            {study.impactMetrics && (
+              <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {Object.entries(study.impactMetrics).map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="rounded-lg border border-border/50 bg-background-secondary/60 px-3 py-2.5 text-center"
+                  >
+                    <p className="text-sm font-bold text-text-primary">{value}</p>
+                    <p className="text-xs text-text-muted mt-0.5">{label}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

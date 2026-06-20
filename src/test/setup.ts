@@ -16,6 +16,9 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
+// Mock Element.scrollTo for tests (not available in jsdom)
+Element.prototype.scrollTo = vi.fn();
+
 // Mock ResizeObserver
 global.ResizeObserver = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),

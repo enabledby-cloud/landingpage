@@ -143,8 +143,7 @@ export function AboutSection() {
 
   return (
     <Section id="about">
-        <div className="grid md:grid-cols-[auto_1fr] gap-8 md:gap-14 items-start max-w-4xl mx-auto">
-        {/* Avatar column */}
+      <div className="grid md:grid-cols-[auto_1fr] gap-8 md:gap-14 items-start max-w-4xl mx-auto">
         <div className="flex justify-center md:justify-start">
           <Avatar
             size="xl"
@@ -158,7 +157,6 @@ export function AboutSection() {
           </Avatar>
         </div>
 
-        {/* Content column */}
         <div>
           <SectionHeader 
             title={aboutData.title}

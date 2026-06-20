@@ -11,14 +11,13 @@ describe('AboutSection', () => {
 
   it('renders the profile avatar fallback', () => {
     render(<AboutSection />);
-    // In jsdom, images don't load, so fallback initials are shown
     expect(screen.getByText('MZ')).toBeInTheDocument();
   });
 
   it('renders the approach paragraphs', () => {
     render(<AboutSection />);
     
-    expect(screen.getByText(/people-centric/)).toBeInTheDocument();
-    expect(screen.getByText(/community facilitator/)).toBeInTheDocument();
+    expect(screen.getByText(/high-trust environments/)).toBeInTheDocument();
+    expect(screen.getByText(/DevOps, security architecture/)).toBeInTheDocument();
   });
 });

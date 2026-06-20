@@ -1,0 +1,35 @@
+# Robots.txt for enabledby.cloud
+# AI Agent Readability compliant - https://vercel.com/kb/guide/agent-readability-spec
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Explicitly allow AI bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://enabledby.cloud/sitemap.xml
+
+# AI agent entry points
+# llms.txt: https://enabledby.cloud/llms.txt
+# AGENTS.md: https://enabledby.cloud/AGENTS.md

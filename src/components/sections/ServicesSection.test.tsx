@@ -22,6 +22,6 @@ describe('ServicesSection', () => {
     render(<ServicesSection />);
     
     fireEvent.click(screen.getByText('Cloud & DevOps Transformation'));
-    expect(screen.getByText(/restructure teams and processes/)).toBeInTheDocument();
+    expect(screen.getByText(/operating models that scale/)).toBeInTheDocument();
   });
 });

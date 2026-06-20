@@ -20,29 +20,29 @@ export function ContactSection() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="outline" size="lg" className="bg-background-secondary" asChild>
-                  <a href={`mailto:${contactData.email}`}>
-                    <Mail className="w-4 h-4 mr-2" />
-                    {contactData.buttonText}
-                  </a>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>{contactData.email}</TooltipContent>
-            </Tooltip>
-
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="outline" size="lg" asChild>
                   <a
                     href={siteConfig.linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Linkedin className="w-4 h-4 mr-2" />
-                    LinkedIn
+                    {contactData.buttonText}
                   </a>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>Opens in a new tab</TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline" size="lg" asChild>
+                  <a href={`mailto:${contactData.email}`}>
+                    <Mail className="w-4 h-4 mr-2" />
+                    Email Me
+                  </a>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>{contactData.email}</TooltipContent>
             </Tooltip>
 
             {siteConfig.cvUrl && (

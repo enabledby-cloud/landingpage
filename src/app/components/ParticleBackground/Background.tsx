@@ -1,12 +1,12 @@
 'use client';
-import React, { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { Particle } from './Particle';
 
 interface BackgroundProps {
     mouseEffectEnabled?: boolean;
 }
 
-const Background: React.FC<BackgroundProps> = ({ mouseEffectEnabled=false}) => {
+const Background = ({ mouseEffectEnabled = false }: BackgroundProps) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const particlesRef = useRef<Particle[]>([]);
     const mouseRef = useRef<{ x: number | null, y: number | null }>({ x: null, y: null });
@@ -26,10 +26,7 @@ const Background: React.FC<BackgroundProps> = ({ mouseEffectEnabled=false}) => {
         const canvas = canvasRef.current;
         const ctx = canvas?.getContext('2d');
 
-        if (!canvas || !ctx) {
-            console.error("Canvas or 2D context not available.");
-            return; // Exit if canvas or context is not ready
-        }
+        if (!canvas || !ctx) return;
 
         const setCanvasSize = () => {
             canvas.width = window.innerWidth;
@@ -92,22 +89,19 @@ const Background: React.FC<BackgroundProps> = ({ mouseEffectEnabled=false}) => {
 
         const handleResize = () => {
             setCanvasSize();
-            initParticles(); // Re-initialize particles on resize
+            initParticles();
         };
 
-        // Initial setup
         setCanvasSize();
         initParticles();
         animateParticles();
 
-        // Event listeners
         window.addEventListener('resize', handleResize);
         if (mouseEffectEnabled) {
             window.addEventListener('mousemove', handleMouseMove);
             window.addEventListener('mouseout', handleMouseOut);
         }
 
-        // Cleanup function
         return () => {
             if (animationFrameId.current) {
                 cancelAnimationFrame(animationFrameId.current);
@@ -116,7 +110,7 @@ const Background: React.FC<BackgroundProps> = ({ mouseEffectEnabled=false}) => {
             window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('mouseout', handleMouseOut);
         };
-    }, [handleMouseMove, handleMouseOut, mouseEffectEnabled]); // Dependency array includes memoized handlers
+    }, [handleMouseMove, handleMouseOut, mouseEffectEnabled]);
     return (
         <>
             <canvas id="particle-canvas" ref={canvasRef}></canvas>

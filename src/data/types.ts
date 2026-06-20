@@ -75,6 +75,7 @@ export interface CaseStudy {
   task: string;
   action: string;
   result: string;
+  impactMetrics?: Record<string, string>;
 }
 
 export interface CaseStudiesData {
@@ -85,6 +86,7 @@ export interface CaseStudiesData {
 
 // Testimonials
 export interface Testimonial {
+  headline?: string;
   quote: string;
   author: string;
   title: string;
@@ -94,6 +96,7 @@ export interface Testimonial {
 
 export interface TestimonialsData {
   title: string;
+  subtitle?: string;
   linkedinUrl: string;
   testimonials: Testimonial[];
 }

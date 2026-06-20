@@ -49,19 +49,21 @@ export function TypingText({
   }, [charCount, totalLength, speed, delay]);
 
   // Build the visible content from segments
-  let remaining = charCount;
-  const rendered = segments.map((segment, i) => {
-    if (remaining <= 0) return null;
-
-    const visibleChars = Math.min(remaining, segment.text.length);
-    remaining -= visibleChars;
+  const rendered: React.ReactNode[] = [];
+  let charsLeft = charCount;
+  for (let i = 0; i < segments.length; i++) {
+    if (charsLeft <= 0) break;
+    const segment = segments[i];
+    const visibleChars = Math.min(charsLeft, segment.text.length);
+    charsLeft -= visibleChars;
     const visibleText = segment.text.slice(0, visibleChars);
 
     if (segment.wrapper) {
-      return <React.Fragment key={i}>{segment.wrapper(visibleText)}</React.Fragment>;
+      rendered.push(<React.Fragment key={i}>{segment.wrapper(visibleText)}</React.Fragment>);
+    } else {
+      rendered.push(<React.Fragment key={i}>{visibleText}</React.Fragment>);
     }
-    return <React.Fragment key={i}>{visibleText}</React.Fragment>;
-  });
+  }
 
   return (
     <span className={cn('inline', className)} {...props}>

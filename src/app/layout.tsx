@@ -23,6 +23,12 @@ export const metadata: Metadata = {
   authors: [{ name: 'Marvyn Zalewski' }],
   creator: 'Marvyn Zalewski',
   metadataBase: new URL('https://enabledby.cloud'),
+  alternates: {
+    canonical: 'https://enabledby.cloud',
+    types: {
+      'text/markdown': 'https://enabledby.cloud/index.md',
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -58,6 +64,48 @@ export const metadata: Metadata = {
   },
 }
 
+// JSON-LD structured data for AI agents
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Marvyn Zalewski',
+    jobTitle: 'Engineering Leader & Cloud Strategist',
+    description:
+      'An Engineering Leader & Cloud Strategist transforming technology landscapes. I partner with organizations to build scalable platforms, simplify complex systems, and enable teams to deliver their best work.',
+    url: 'https://enabledby.cloud',
+    image: 'https://i.imgur.com/3fANW97.jpeg',
+    email: 'mszalewski@ownpixel.com',
+    sameAs: ['https://www.linkedin.com/in/marvyn-zalewski'],
+    knowsAbout: [
+      'Platform Engineering',
+      'FinOps',
+      'DevOps',
+      'Cloud Architecture',
+      'AWS',
+      'Engineering Leadership',
+      'Team Topologies',
+    ],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Awin Global',
+    },
+  },
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://enabledby.cloud',
+      },
+    ],
+  },
+  dateModified: new Date().toISOString(),
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -65,6 +113,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${ibmPlexSans.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
           {children}
       </body>
