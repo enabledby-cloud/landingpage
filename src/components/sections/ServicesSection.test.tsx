@@ -12,16 +12,16 @@ describe('ServicesSection', () => {
   it('renders all service cards', () => {
     render(<ServicesSection />);
     
-    expect(screen.getByText('Cloud & DevOps Transformation')).toBeInTheDocument();
-    expect(screen.getByText(/Financial Operations/)).toBeInTheDocument();
-    expect(screen.getByText(/Platform Engineering/)).toBeInTheDocument();
-    expect(screen.getByText('Cloud Security & Governance')).toBeInTheDocument();
+    expect(screen.getByText('Platform Engineering and Developer Enablement')).toBeInTheDocument();
+    expect(screen.getByText('FinOps and Cost Optimization')).toBeInTheDocument();
+    expect(screen.getByText('Cloud and DevOps')).toBeInTheDocument();
+    expect(screen.getByText('Cloud Security')).toBeInTheDocument();
   });
 
   it('renders service descriptions when expanded', () => {
     render(<ServicesSection />);
     
-    fireEvent.click(screen.getByText('Cloud & DevOps Transformation'));
-    expect(screen.getByText(/operating models that scale/)).toBeInTheDocument();
+    fireEvent.click(screen.getByText('Cloud and DevOps'));
+    expect(screen.getByText(/scalable operating models/)).toBeInTheDocument();
   });
 });

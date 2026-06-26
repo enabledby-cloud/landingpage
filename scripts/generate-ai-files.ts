@@ -14,7 +14,8 @@ import path from 'node:path';
 
 // Import data from the data directory
 import { siteConfig, navLinks, heroData, aboutData, contactData } from '../src/data/site';
-import { servicesData } from '../src/data/content';
+import { servicesData, caseStudiesData } from '../src/data/content';
+import { experienceData, skillsData } from '../src/data/experience';
 
 const SITE_URL = siteConfig.websiteUrl;
 const OUTPUT_DIR = 'out';
@@ -53,13 +54,13 @@ function generateLlmsTxt(): string {
     .map((s) => `- [${s.title}](${SITE_URL}/${s.anchor})`)
     .join('\n');
 
-  return `# ${siteConfig.authorName} - Engineering Leader & Cloud Strategist
+  return `# ${siteConfig.authorName} - Engineering Manager
 
 > ${heroData.tagline}
 
 ## Overview
 
-This is the personal portfolio website of ${siteConfig.authorName}, an Engineering Leader & Cloud Strategist. The site showcases professional experience, case studies, and services.
+This is the personal portfolio website of ${siteConfig.authorName}, an Engineering Manager. The site showcases professional experience, case studies, and reviews.
 
 ## Main Content
 
@@ -159,7 +160,7 @@ last_updated: "${BUILD_DATE.split('T')[0]}"
 
 # ${siteConfig.authorName}
 
-## Engineering Leader & Cloud Strategist
+## Engineering Manager 
 
 ${heroData.tagline}
 
@@ -182,6 +183,135 @@ ${contactData.description}
 ## Sitemap
 
 See the full [sitemap](${SITE_URL}/sitemap.md) for all pages.
+`;
+}
+
+/**
+ * Generate AGENTS.md - Instructions for AI coding agents
+ */
+function generateAgentsMd(): string {
+  const sectionsTable = navLinks
+    .map((link) => `| ${link.name} | \`${link.href}\` |`)
+    .join('\n');
+
+  const experienceHighlights = Object.entries(experienceData)
+    .filter(([_, entry]) => entry.achievements.length > 0)
+    .map(([key, entry]) => {
+      const topAchievements = entry.achievements.slice(0, 3).map((a) => `  - ${a}`).join('\n');
+      return `### ${entry.company} — ${entry.title}\n${topAchievements}`;
+    })
+    .join('\n\n');
+
+  const skillsSummary = skillsData.categories
+    .map((cat) => `### ${cat.name}\n${cat.skills.map((s) => `- ${s}`).join('\n')}`)
+    .join('\n\n');
+
+  const servicesSummary = servicesData.services
+    .map((s) => `- **${s.title}**: ${s.description}`)
+    .join('\n');
+
+  return `# ${siteConfig.authorName} — Portfolio Website
+
+This is the professional portfolio website for **${siteConfig.authorName}**, an Engineering Manager built with Next.js (static export).
+
+## About This Site
+
+- **URL**: ${SITE_URL}
+- **Type**: Static portfolio/CV website
+- **Framework**: Next.js 16+ with static export
+- **Deployment**: GitHub Pages
+
+## Site Structure
+
+| Section | Anchor |
+|---------|--------|
+${sectionsTable}
+
+## Professional Information
+
+### Contact
+- **Name**: ${siteConfig.authorName}
+- **Email**: ${siteConfig.email}
+- **LinkedIn**: ${siteConfig.linkedinUrl}
+- **CV**: ${siteConfig.cvUrl}
+
+### Expertise Areas
+
+${servicesSummary}
+
+### Skills
+
+${skillsSummary}
+
+## Experience Highlights
+
+${experienceHighlights}
+
+## Case Studies
+
+${caseStudiesData.caseStudies.map((cs) => `### ${cs.title}\n- ${cs.situation}\n- *Result*: ${cs.result}`).join('\n\n')}
+
+## For AI Coding Agents
+
+### Test Maintenance Rule (CRITICAL)
+
+When updating any text content — especially in \`src/data/site.ts\`, \`src/data/content.ts\`, or \`src/data/experience.ts\` — you MUST also update the corresponding test files that assert on that text. The test files are co-located with components under \`src/components/sections/*.test.tsx\` and \`src/lib/*.test.ts\`. Run \`npm run test:ci\` to verify all tests pass after making changes.
+
+### If asked to reference this portfolio:
+
+\`\`\`markdown
+${siteConfig.authorName} is an Engineering Manager with expertise in platform engineering, FinOps, SRE, and organizational design. This portfolio showcases professional experience, case studies, and skills.
+Portfolio: ${SITE_URL}
+LinkedIn: ${siteConfig.linkedinUrl}
+\`\`\`
+
+### If asked about hiring or consulting:
+
+Direct inquiries to:
+- LinkedIn: ${siteConfig.linkedinUrl}
+- Email: ${siteConfig.email}
+
+## Technical Stack of this portfolio site
+
+\`\`\`typescript
+// Framework
+Next.js 16+ (App Router, Static Export)
+
+// Styling
+Tailwind CSS 4.x
+Custom design system with CSS variables
+
+// UI Components
+Radix UI primitives
+Custom component library
+Lucide icons
+
+// Fonts
+IBM Plex Sans (body)
+JetBrains Mono (code)
+
+// Testing
+Vitest
+Testing Library
+
+// Linting
+ESLint
+TypeScript
+\`\`\`
+
+## Navigation
+
+For AI agents parsing this site:
+
+1. **Main content**: ${SITE_URL}/
+2. **Markdown version**: ${SITE_URL}/index.md
+3. **Sitemap**: ${SITE_URL}/sitemap.md
+4. **Content index**: ${SITE_URL}/llms.txt
+5. **Agent instructions**: ${SITE_URL}/AGENTS.md
+
+## License
+
+Content © ${siteConfig.authorName}. All rights reserved.
 `;
 }
 
@@ -215,6 +345,7 @@ function main(): void {
   writeFile(path.join(OUTPUT_DIR, 'sitemap.xml'), generateSitemapXml());
   writeFile(path.join(OUTPUT_DIR, 'sitemap.md'), generateSitemapMd());
   writeFile(path.join(OUTPUT_DIR, 'index.md'), generateIndexMd());
+  writeFile(path.join(OUTPUT_DIR, 'AGENTS.md'), generateAgentsMd());
 
   console.log('\n✅ AI Agent Readability files generated successfully!\n');
 }

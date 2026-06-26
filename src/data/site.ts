@@ -28,7 +28,7 @@ export const heroData: HeroData = {
   suffix: '*',
   name: 'Marvyn',
   tagline:
-    "I'm on a mission to build an empowering developer experience, so engineers can focus on shipping great products. I do this by building modern platforms and applying effective FinOps.",
+    "I'm on a mission to build an empowering developer experience, so engineers can focus on shipping and operating great products; faster, more reliable, efficient, and secure.",
   greetingNote: '*a greeting from North Germany',
   ctaText: 'Explore My Work',
   ctaHref: '#results',
@@ -37,8 +37,8 @@ export const heroData: HeroData = {
 export const aboutData: AboutData = {
   title: 'My Approach',
   paragraphs: [
-    'My north star is simple: remove every obstacle between engineers and shipping great products. I build high-trust, autonomous teams and invest in the platforms, tooling, and culture that make this possible.',
-    'With a background spanning DevOps, security architecture, and platform strategy, I connect technical solutions to business outcomes. I specialize in creating tangible results through FinOps ($1M+ in savings delivered), modern platform engineering, and organizational design using frameworks like Team Topologies.',
+    'My principles are simple: remove every obstacle between engineers and shipping great products. I build high-trust, autonomous teams and invest in the platforms, tooling, and culture that make this possible.',
+    'With a background spanning DevOps, security architecture, and cloud platform strategy, I connect technical solutions to business outcomes. I specialize in creating tangible results through FinOps, modern and AI-native platform engineering, and organizational design using frameworks like Team Topologies.',
   ],
   profileImage: '/profile.jpeg',
 };

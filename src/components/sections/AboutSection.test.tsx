@@ -17,7 +17,7 @@ describe('AboutSection', () => {
   it('renders the approach paragraphs', () => {
     render(<AboutSection />);
     
-    expect(screen.getByText(/high-trust environments/)).toBeInTheDocument();
+    expect(screen.getByText(/remove every obstacle/)).toBeInTheDocument();
     expect(screen.getByText(/DevOps, security architecture/)).toBeInTheDocument();
   });
 });

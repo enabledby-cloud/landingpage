@@ -12,7 +12,7 @@ describe('ContactSection', () => {
   it('renders the description', () => {
     render(<ContactSection />);
 
-    expect(screen.getByText(/Always up for conversations/)).toBeInTheDocument();
+    expect(screen.getByText(/always open to connecting/)).toBeInTheDocument();
   });
 
   it('renders the email button', () => {

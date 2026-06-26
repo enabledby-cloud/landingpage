@@ -6,7 +6,7 @@ describe('ExperienceSection', () => {
   it('renders the section with title', () => {
     render(<ExperienceSection />);
 
-    expect(screen.getByText('Career')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Career/i })).toBeInTheDocument();
   });
 
   it('renders the subtitle', () => {
@@ -24,7 +24,7 @@ describe('ExperienceSection', () => {
   it('renders experience titles', () => {
     render(<ExperienceSection />);
 
-    expect(screen.getByText('Engineering Manager, Cloud Platform')).toBeInTheDocument();
+    expect(screen.getByText('Engineering Manager - Cloud Platform')).toBeInTheDocument();
   });
 
   it('renders skills badges', () => {

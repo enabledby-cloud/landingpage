@@ -27,7 +27,7 @@ describe('HeroSection', () => {
   it('renders the tagline', () => {
     render(<HeroSection />);
 
-    expect(screen.getByText(/Scale, Simplify, and Enable/)).toBeInTheDocument();
+    expect(screen.getByText(/build an empowering developer experience/)).toBeInTheDocument();
   });
 
   it('renders the greeting note', () => {
@@ -39,8 +39,8 @@ describe('HeroSection', () => {
   it('renders the CTA button', () => {
     render(<HeroSection />);
 
-    const ctaLink = screen.getByRole('link', { name: /get in touch/i });
+    const ctaLink = screen.getByRole('link', { name: /Explore My Work/i });
     expect(ctaLink).toBeInTheDocument();
-    expect(ctaLink).toHaveAttribute('href', '#say-hi');
+    expect(ctaLink).toHaveAttribute('href', '#results');
   });
 });

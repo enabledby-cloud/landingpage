@@ -12,27 +12,27 @@ describe('CaseStudiesSection', () => {
   it('renders the subtitle', () => {
     render(<CaseStudiesSection />);
 
-    expect(screen.getByText('Real challenges, measurable outcomes.')).toBeInTheDocument();
+    expect(screen.getByText(/Real challenges with measurable outcomes/)).toBeInTheDocument();
   });
 
   it('renders all case study tabs', () => {
     render(<CaseStudiesSection />);
 
-    expect(screen.getByText('The FinOps Turnaround')).toBeInTheDocument();
-    expect(screen.getByText('Accelerating Delivery for 200+ Engineers')).toBeInTheDocument();
-    expect(screen.getByText('Identity & Access Modernization')).toBeInTheDocument();
+    expect(screen.getByText('FinOps Initial Analysis')).toBeInTheDocument();
+    expect(screen.getByText('Modernizing Software Logistics for 150+ Engineers')).toBeInTheDocument();
+    expect(screen.getByText('Identity and Access Modernization')).toBeInTheDocument();
   });
 
   it('displays the first case study content by default', () => {
     render(<CaseStudiesSection />);
 
-    expect(screen.getByText(/\$3.5M\+ annual cloud spend/)).toBeInTheDocument();
+    expect(screen.getByText(/annual spend of \$3\.5M\+/)).toBeInTheDocument();
   });
 
   it('switches case study when a tab is clicked', () => {
     render(<CaseStudiesSection />);
 
-    fireEvent.click(screen.getByText('Accelerating Delivery for 200+ Engineers'));
+    fireEvent.click(screen.getByText('Modernizing Software Logistics for 150+ Engineers'));
 
     expect(screen.getByText(/outdated on-prem CI\/CD system/)).toBeInTheDocument();
   });
