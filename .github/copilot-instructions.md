@@ -3,7 +3,7 @@
 ## Project Overview
 This is a professional CV/portfolio website for Marvyn Zalewski (enabledby.cloud), built with Next.js 15 and deployed via GitHub Pages. The site features an animated particle system background, a comprehensive career showcase, and is prepared for future blog integration.
 
-**Target Audience**: Engineering leaders, CTOs, and hiring managers looking for cloud architects, engineering managers, or principal DevOps engineers.
+**Target Audience**: Engineering leaders, CTOs, and hiring managers looking for cloud architects, Engineering Manager for Cloud Platformss, or principal DevOps engineers.
 
 ## Tech Stack
 - **Framework**: Next.js 15.5 (App Router, Turbopack)

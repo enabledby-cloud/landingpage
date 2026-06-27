@@ -1,6 +1,6 @@
 # enabledby.cloud landingpage
 
-Portfolio for [Marvyn Zalewski](https://enabledby.cloud), an Engineering Manager in Barcelona.
+Portfolio for [Marvyn Zalewski](https://enabledby.cloud), an Engineering Manager for Cloud Platforms in Barcelona.
 
 ## License
 

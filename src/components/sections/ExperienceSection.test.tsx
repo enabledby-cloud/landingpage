@@ -24,7 +24,7 @@ describe('ExperienceSection', () => {
   it('renders experience titles', () => {
     render(<ExperienceSection />);
 
-    expect(screen.getByText('Engineering Manager - Cloud Platform')).toBeInTheDocument();
+    expect(screen.getByText('Engineering Manager for Cloud Platforms - Cloud Platform')).toBeInTheDocument();
   });
 
   it('renders skills badges', () => {

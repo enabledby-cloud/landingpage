@@ -17,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Marvyn Zalewski - Engineering Leader & Cloud Strategist',
-  description: 'An Engineering Leader & Cloud Strategist transforming technology landscapes. I partner with organizations to build scalable platforms, simplify complex systems, and enable teams to deliver their best work.',
+  title: 'Marvyn Zalewski - Engineering Manager for Cloud Platforms',
+  description: 'An Engineering Manager for Cloud Platforms transforming technology landscapes. I partner with organizations to build scalable platforms, simplify complex systems, and enable teams to deliver their best work.',
   keywords: 'Engineering Leader, Cloud Strategist, DevOps, FinOps, Platform Engineering, AWS, Cloud Security',
   authors: [{ name: 'Marvyn Zalewski' }],
   creator: 'Marvyn Zalewski',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://enabledby.cloud',
-    title: 'Marvyn Zalewski - Engineering Leader & Cloud Strategist',
-    description: 'An Engineering Leader & Cloud Strategist transforming technology landscapes.',
+    title: 'Marvyn Zalewski - Engineering Manager for Cloud Platforms',
+    description: 'An Engineering Manager for Cloud Platforms transforming technology landscapes.',
     siteName: 'Marvyn Zalewski Portfolio',
     images: [
       {
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marvyn Zalewski - Engineering Leader & Cloud Strategist',
-    description: 'An Engineering Leader & Cloud Strategist transforming technology landscapes.',
+    title: 'Marvyn Zalewski - Engineering Manager for Cloud Platforms',
+    description: 'An Engineering Manager for Cloud Platforms transforming technology landscapes.',
     images: ['https://i.imgur.com/3fANW97.jpeg'],
   },
   robots: {
@@ -71,9 +71,9 @@ const jsonLd = {
   mainEntity: {
     '@type': 'Person',
     name: 'Marvyn Zalewski',
-    jobTitle: 'Engineering Leader & Cloud Strategist',
+    jobTitle: 'Engineering Manager for Cloud Platforms',
     description:
-      'An Engineering Leader & Cloud Strategist transforming technology landscapes. I partner with organizations to build scalable platforms, simplify complex systems, and enable teams to deliver their best work.',
+      'An Engineering Manager for Cloud Platforms transforming technology landscapes. I partner with organizations to build scalable platforms, simplify complex systems, and enable teams to deliver their best work.',
     url: 'https://enabledby.cloud',
     image: 'https://i.imgur.com/3fANW97.jpeg',
     email: 'mszalewski@ownpixel.com',

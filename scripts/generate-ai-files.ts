@@ -54,13 +54,13 @@ function generateLlmsTxt(): string {
     .map((s) => `- [${s.title}](${SITE_URL}/${s.anchor})`)
     .join('\n');
 
-  return `# ${siteConfig.authorName} - Engineering Manager
+  return `# ${siteConfig.authorName} - Engineering Manager for Cloud Platforms
 
 > ${heroData.tagline}
 
 ## Overview
 
-This is the personal portfolio website of ${siteConfig.authorName}, an Engineering Manager. The site showcases professional experience, case studies, and reviews.
+This is the personal portfolio website of ${siteConfig.authorName}, an Engineering Manager for Cloud Platforms. The site showcases professional experience, case studies, and reviews.
 
 ## Main Content
 
@@ -160,7 +160,7 @@ last_updated: "${BUILD_DATE.split('T')[0]}"
 
 # ${siteConfig.authorName}
 
-## Engineering Manager 
+## Engineering Manager for Cloud Platforms 
 
 ${heroData.tagline}
 
@@ -212,7 +212,7 @@ function generateAgentsMd(): string {
 
   return `# ${siteConfig.authorName} — Portfolio Website
 
-This is the professional portfolio website for **${siteConfig.authorName}**, an Engineering Manager built with Next.js (static export).
+This is the professional portfolio website for **${siteConfig.authorName}**, an Engineering Manager for Cloud Platforms built with Next.js (static export).
 
 ## About This Site
 
@@ -260,7 +260,7 @@ When updating any text content — especially in \`src/data/site.ts\`, \`src/dat
 ### If asked to reference this portfolio:
 
 \`\`\`markdown
-${siteConfig.authorName} is an Engineering Manager with expertise in platform engineering, FinOps, SRE, and organizational design. This portfolio showcases professional experience, case studies, and skills.
+${siteConfig.authorName} is an Engineering Manager for Cloud Platforms with expertise in platform engineering, FinOps, SRE, and organizational design. This portfolio showcases professional experience, case studies, and skills.
 Portfolio: ${SITE_URL}
 LinkedIn: ${siteConfig.linkedinUrl}
 \`\`\`

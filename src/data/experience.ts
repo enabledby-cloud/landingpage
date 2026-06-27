@@ -3,7 +3,7 @@ import type { ExperienceData, SkillsData } from './types';
 
 export const experienceData: ExperienceData = {
  awin: {
-  title: 'Engineering Manager - Cloud Platform',
+  title: 'Engineering Manager for Cloud Platforms - Cloud Platform',
   company: 'Awin Global',
   period: 'Aug 2024 - Present',
   description:

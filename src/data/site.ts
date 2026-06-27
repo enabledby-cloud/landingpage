@@ -5,7 +5,7 @@ export const featureFlags: FeatureFlags = {
 };
 
 export const siteConfig: SiteConfig = {
-  siteName: 'Marvyn Zalewski - Engineering Manager',
+  siteName: 'Marvyn Zalewski - Engineering Manager for Cloud Platforms',
   authorName: 'Marvyn Zalewski',
   linkedinUrl: 'https://www.linkedin.com/in/marvyn-zalewski',
   email: 'mszalewski@ownpixel.com',
